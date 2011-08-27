@@ -1,3 +1,4 @@
+
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -11,65 +12,106 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :firstname %><br />
+
+
+
+<div class="field">
+    <b><%= f.label :firstname, 'Qual seu primeiro nome?' %><br />
     <%= f.text_field :firstname %>
   </div>
-  <div class="field">
-    <%= f.label :lastname %><br />
+
+    <div class="field">
+    <%= f.label :lastname, 'Qual seu último nome?' %><br />
     <%= f.text_field :lastname %>
   </div>
   <div class="field">
-    <%= f.label :age %><br />
+    <%= f.label :age, 'Qual sua idade?'%><br />
     <%= f.text_field :age %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :address, 'Qual sua cidade e estado? (Ex: Londrina/PR)' %><br />
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :tel %><br />
-    <%= f.text_field :tel %>
+    <%= f.label :escolaridade, 'Qual sua escolaridade?' %><br />
+    <%= f.text_field :escolaridade %>
   </div>
   <div class="field">
-    <%= f.label :q1 %><br />
-    <%= f.text_field :q1 %>
+    <%= f.label :profissao, 'Qual sua profissão?' %><br />
+    <%= f.text_field :profissao %>
+  </div>
+
+  <div class="field">
+    <%= f.label :q1, '1. Você se considera:' %><br />
+    <%= f.radio_button(:q1, 1) %>Nerd / Geek <br />
+    <%= f.radio_button(:q1, 2) %>Nenhuma das alternativas
+
   </div>
   <div class="field">
-    <%= f.label :q2 %><br />
-    <%= f.text_field :q2 %>
+    <%= f.label :q2, '2. Você considera a moda um meio de comunicação pessoal?' %><br />
+    <%= f.radio_button(:q2, 1) %>Sim <br />
+    <%= f.radio_button(:q2, 2) %>Não
   </div>
   <div class="field">
-    <%= f.label :q3 %><br />
-    <%= f.text_field :q3 %>
+    <%= f.label :q3, '3. Você acha necessário expressar seu estilo de vida através da moda, como por exemplo usando camisetas com estampas que remetam a cultura nerd? :' %><br />
+    <%= f.radio_button(:q3, 1) %>Sim <br />
+    <%= f.radio_button(:q3, 2) %>Não <br />
   </div>
   <div class="field">
-    <%= f.label :q4 %><br />
-    <%= f.text_field :q4 %>
+    <%= f.label :q4, '4. Você costuma usar a internet para comprar produtos?' %><br />
+    <%= f.radio_button(:q4, 1) %>Sim <br />
+    <%= f.radio_button(:q4, 2) %>Não <br />
+    <%= f.radio_button(:q4, 3) %>Raramente
   </div>
   <div class="field">
-    <%= f.label :q5 %><br />
-    <%= f.text_field :q5 %>
+    <%= f.label :q5, 'Caso a resposta anterior seja positiva, um dos produtos comprados pela internet costuma ser produtos de moda, como camisetas e outros que possuam uma temática nerd?' %><br />
+    <%= f.radio_button(:q4, 1) %>Sim <br />
+    <%= f.radio_button(:q4, 2) %>Não <br />
+    <%= f.radio_button(:q4, 3) %>Raramente
   </div>
   <div class="field">
-    <%= f.label :q6 %><br />
-    <%= f.text_field :q6 %>
+    <%= f.label :q6, '6. Você costuma acessar sites nacionais de venda de produtos de moda com temática nerd?' %><br />
+    <%= f.radio_button(:q6, 1) %>Sim <br />
+    <%= f.radio_button(:q6, 2) %>Não <br />
+    <%= f.label :sites, 'Se sim, quais sites? ' %> 
+    <%= f.text_field :sites %>
   </div>
   <div class="field">
-    <%= f.label :q7 %><br />
-    <%= f.text_field :q7 %>
+    <%= f.label :q7, '7. Esses sites oferecem o tipo de serviço e produto que o satisfazem?' %><br />
+    <%= f.radio_button(:q7, 1) %>Sim <br />
+    <%= f.radio_button(:q7, 2) %>Não
   </div>
   <div class="field">
-    <%= f.label :q8 %><br />
-    <%= f.text_field :q8 %>
+    <%= f.label :q8, '8. Qual tipo de vestuário você costuma consumir com maior freqüência?  (Pergunta de múltipla escolha)' %><br />
+    <%= f.check_box(:q8, :value => 1) %>Camiseta <br />
+    <%= f.check_box(:q8, :value => 2) %>Camisa <br />
+    <%= f.check_box(:q8, :value => 3) %>Berumuda <br />
+    <%= f.check_box(:q8, :value => 4) %>Moletom <br />
+    <%= f.check_box(:q8, :value => 5) %>Jaqueta <br />
+    <%= f.check_box(:q8, :value => 6) %>Calça Social <br />
+    <%= f.check_box(:q8, :value => 7) %>Terno <br />
+    <%= f.check_box(:q8, :value => 8) %>Gravata <br />
+    <%= f.check_box(:q8, :value => 9) %>Outros
+    <%= f.label :vestuario, '. Exemplos: ' %> 
+    <%= f.text_field :vestuario %>
+
   </div>
   <div class="field">
-    <%= f.label :q9 %><br />
-    <%= f.text_field :q9 %>
+    <%= f.label :q9, '9.  O que você procura ao se vestir? (Pergunta de múltipla escolha)' %><br />
+    <%= f.check_box(:q9, :value => 1) %>Praticidade <br />
+    <%= f.check_box(:q9, :value => 2) %>Conforto<br />
+    <%= f.check_box(:q9, :value => 3) %>Custo <br />
+    <%= f.check_box(:q9, :value => 4) %>Qualidade <br />
+    <%= f.check_box(:q9, :value => 5) %>Marca <br />
+    <%= f.check_box(:q9, :value => 6) %>Estilo <br />
   </div>
   <div class="field">
-    <%= f.label :q10 %><br />
-    <%= f.text_field :q10 %>
+    <%= f.label :q10, '10. Cada pessoa tem um estilo próprio de se vestir, e esse estilo é a sua  marca pessoal, é a maneira como se mostra ao mundo. Nas alternativas abaixo você verá uma sequência de imagens que representam alguns estilos básicos. Escolha o qual você se identifica.' %><br />
+    <%= f.check_box(:q10, :value => 1) %>Clássico <br />
+    <%= f.check_box(:q10, :value => 2) %>Básico<br />
+    <%= f.check_box(:q10, :value => 3) %>Casual<br />
+    <%= f.check_box(:q10, :value => 4) %>Despojado<br />
+    <%= f.check_box(:q10, :value => 5) %>Sexy<br />
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,3 +1,11 @@
+<%= form_for(@post) do |f| %>
+
+<p><b>1. Qual seu primeiro nome? </b></p>
+<div class="field">
+    
+    <%= f.text_field :firstname %>
+  </div>
+
 <h1>
 
     <th>Firstname</th>
@@ -40,5 +48,5 @@
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
 <%end  %>
-
+<%end%>
 <br />
