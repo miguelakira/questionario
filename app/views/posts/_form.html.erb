@@ -2,7 +2,7 @@
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h2>Por favor, verifique os erros abaixo. Provavelmente faltou preencher alguma questão. Obrigada!</h2>
 
       <ul>
       <% @post.errors.full_messages.each do |msg| %>
@@ -33,8 +33,9 @@
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :escolaridade, 'Qual sua escolaridade?' %><br />
-    <%= f.text_field :escolaridade %>
+    <%= f.label :escolaridade, 'Qual sua escolaridade? (Escolha o ensino que está cursando ou o último que completou.' %><br />
+    <%= f.select :escolaridade, { "Ensino Fundamental" => "1", "Ensino Médio" => "2", "Ensino Técnico" => "3", "Ensino Superior" => "4", "Pós-Graduação" => "5" } %>
+    
   </div>
   <div class="field">
     <%= f.label :profissao, 'Qual sua profissão?' %><br />
@@ -64,10 +65,10 @@
     <%= f.radio_button(:q4, 3) %>Raramente
   </div>
   <div class="field">
-    <%= f.label :q5, 'Caso a resposta anterior seja positiva, um dos produtos comprados pela internet costuma ser produtos de moda, como camisetas e outros que possuam uma temática nerd?' %><br />
-    <%= f.radio_button(:q4, 1) %>Sim <br />
-    <%= f.radio_button(:q4, 2) %>Não <br />
-    <%= f.radio_button(:q4, 3) %>Raramente
+    <%= f.label :q5, 'Caso a resposta anterior seja positiva, um dos produtos comprados pela internet costuma ser produtos de moda, como camisetas e outros que possuam uma temática nerd? Se respondeu NÃO na resposta anterior, selecione NÃO nesta também.' %><br />
+    <%= f.radio_button(:q5, 1) %>Sim <br />
+    <%= f.radio_button(:q5, 2) %>Não <br />
+    <%= f.radio_button(:q5, 3) %>Raramente
   </div>
   <div class="field">
     <%= f.label :q6, '6. Você costuma acessar sites nacionais de venda de produtos de moda com temática nerd?' %><br />
