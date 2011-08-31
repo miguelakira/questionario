@@ -2,7 +2,7 @@
 class Post < ActiveRecord::Base
 	
 validates :firstname, :lastname, :age, :address, :q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10, :escolaridade, :profissao, :presence => {:message => "Não pode ficar em branco!"}
-
+validates :age, :numericality => true
 HUMANIZED_ATTRIBUTES = {
     :firstname => "Primeiro Nome",
     :lastname => "Último Nome",

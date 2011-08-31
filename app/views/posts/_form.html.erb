@@ -33,7 +33,7 @@
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :escolaridade, 'Qual sua escolaridade? (Escolha o ensino que está cursando ou o último que completou.' %><br />
+    <%= f.label :escolaridade, 'Qual sua escolaridade? (Escolha o ensino que está cursando ou o último que completou).' %><br />
     <%= f.select :escolaridade, { "Ensino Fundamental" => "1", "Ensino Médio" => "2", "Ensino Técnico" => "3", "Ensino Superior" => "4", "Pós-Graduação" => "5" } %>
     
   </div>
@@ -84,37 +84,73 @@
   </div>
   <div class="field">
     <%= f.label :q8, '8. Qual tipo de vestuário você costuma consumir com maior freqüência?  (Pergunta de múltipla escolha)' %><br />
-    <%= f.check_box(:q8, :value => 1) %>Camiseta <br />
-    <%= f.check_box(:q8, :value => 2) %>Camisa <br />
-    <%= f.check_box(:q8, :value => 3) %>Berumuda <br />
-    <%= f.check_box(:q8, :value => 4) %>Moletom <br />
-    <%= f.check_box(:q8, :value => 5) %>Jaqueta <br />
-    <%= f.check_box(:q8, :value => 6) %>Calça Social <br />
-    <%= f.check_box(:q8, :value => 7) %>Terno <br />
-    <%= f.check_box(:q8, :value => 8) %>Gravata <br />
-    <%= f.check_box(:q8, :value => 9) %>Outros
+    <%= f.check_box(:q8, { :multiple => true }, "Camiseta", nil) %>Camiseta <br />
+    <%= f.check_box(:q8, { :multiple => true }, "Camisa", nil) %>Camisa <br />
+    <%= f.check_box(:q8, { :multiple => true }, "Bermuda", nil) %>Bermuda<br />
+    <%= f.check_box(:q8, { :multiple => true }, "Moletom", nil) %>Moletom<br />
+    <%= f.check_box(:q8, { :multiple => true }, "Jaqueta", nil) %>Jaqueta<br />
+    <%= f.check_box(:q8, { :multiple => true }, "Calca Social", nil) %>Calça Social<br />
+    <%= f.check_box(:q8, { :multiple => true }, "Terno", nil) %>Terno<br />
+    <%= f.check_box(:q8, { :multiple => true }, "Gravata", nil) %>Gravata<br />
+    <%= f.check_box(:q8, { :multiple => true }, "Outros", nil) %>Outros
+    
     <%= f.label :vestuario, '. Exemplos: ' %> 
     <%= f.text_field :vestuario %>
 
   </div>
   <div class="field">
     <%= f.label :q9, '9.  O que você procura ao se vestir? (Pergunta de múltipla escolha)' %><br />
-    <%= f.check_box(:q9, :value => 1) %>Praticidade <br />
-    <%= f.check_box(:q9, :value => 2) %>Conforto<br />
-    <%= f.check_box(:q9, :value => 3) %>Custo <br />
-    <%= f.check_box(:q9, :value => 4) %>Qualidade <br />
-    <%= f.check_box(:q9, :value => 5) %>Marca <br />
-    <%= f.check_box(:q9, :value => 6) %>Estilo <br />
+    <%= f.check_box(:q9, { :multiple => true }, "Praticidade", nil) %>
+    Praticidade <br />
+    <%= f.check_box(:q9, { :multiple => true }, "Conforto", nil) %>
+    Conforto<br />
+    <%= f.check_box(:q9, { :multiple => true }, "Custo", nil) %>
+    Custo <br />
+    <%= f.check_box(:q9, { :multiple => true }, "Qualidade", nil) %>
+    Qualidade <br />
+    <%= f.check_box(:q9, { :multiple => true }, "Marca", nil) %>
+    Marca <br />
+    <%= f.check_box(:q9, { :multiple => true }, "Estilo", nil) %>
+    Estilo <br />
   </div>
   <div class="field">
-    <%= f.label :q10, '10. Cada pessoa tem um estilo próprio de se vestir, e esse estilo é a sua  marca pessoal, é a maneira como se mostra ao mundo. Nas alternativas abaixo você verá uma sequência de imagens que representam alguns estilos básicos. Escolha o qual você se identifica.' %><br />
-    <%= f.check_box(:q10, :value => 1) %>Clássico <br />
-    <%= f.check_box(:q10, :value => 2) %>Básico<br />
-    <%= f.check_box(:q10, :value => 3) %>Casual<br />
-    <%= f.check_box(:q10, :value => 4) %>Despojado<br />
-    <%= f.check_box(:q10, :value => 5) %>Sexy<br />
+    <%= f.label :q10, '10. Cada pessoa tem um estilo próprio de se vestir, e esse estilo é a sua  marca pessoal, é a maneira como se mostra ao mundo. Nas alternativas abaixo você verá uma sequência de imagens que representam alguns estilos básicos. Escolha o qual você se identifica.' %><br /><br />
+    <%= f.check_box(:q10, { :multiple => true }, "Classico", nil) %>
+    <span style="color : red">Clássico:</span> Transmitem confiança, serenidade, tendem ao tradicional, mas procuram manter-se atualizado nas tendências da moda. <br />
+    <%= image_tag("classico1.jpg") %>
+    <%= image_tag("classico2.jpg") %>
+    <br />
+    <br />
+    <br />
+    <%= f.check_box(:q10, { :multiple => true }, "Basico", nil) %>
+    <span style="color : red"> Básico: </span>Veste-se naturalmente, usando o que encontra em seu guarda-roupa, e em contrapartida assimila novas tendências com, aparentando as vezes um estilo mais descontraído. <br />
+    <%= image_tag("basico1.jpg") %>
+    <%= image_tag("basico2.jpg") %>
+    <br />
+    <br />
+    <br />
+    <%= f.check_box(:q10, { :multiple => true }, "Casual", nil) %>
+    <span style="color : red">Casual: </span>Mistura uma pouco de informalidade no estilo clássico<br />
+    <%= image_tag("casual1.jpg") %>
+    <%= image_tag("casual2.jpg") %>
+    <br />
+    <br />
+    <br />
+    <%= f.check_box(:q10, { :multiple => true }, "Despojado", nil) %>
+    <span style="color : red">Despojado:</span> Sempre disposto a adotar novas modelagens e estruturas, procuram sempre algo característico de sua personalidade, misturam looks e peças<br />
+    <%= image_tag("despojado1.jpg") %>
+    <%= image_tag("despojado2.jpg") %>
+    
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <p style = "color:red">Pronto! Se você já respondeu  todas as perguntas, pode clicar em "Submeter" logo abaixo! Obrigada! </p>
+    <br />
+    <br />
+    <%= f.submit "Submeter" %>
+    <br />
+    <br />
+    <br />
+    <br />
+
   </div>
 <% end %>

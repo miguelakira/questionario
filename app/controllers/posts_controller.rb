@@ -42,7 +42,17 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = Post.new(params[:post])
+    @post.q8 = @post.q8.reject(&:blank?)
+    @post.q8 = @post.q8.join(",")
 
+    @post.q9 = @post.q9.reject(&:blank?)
+    @post.q9 = @post.q9.join(",")
+
+    @post.q10 = @post.q10.reject(&:blank?)
+    @post.q10 = @post.q10.join(",")
+
+
+    
     respond_to do |format|
       if @post.save
         format.html { redirect_to(@post, :notice => 'Post was successfully created.') }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110827201852) do
+ActiveRecord::Schema.define(:version => 20110830202509) do
 
   create_table "posts", :force => true do |t|
     t.string   "firstname"
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(:version => 20110827201852) do
     t.integer  "q5"
     t.integer  "q6"
     t.integer  "q7"
-    t.integer  "q8"
-    t.integer  "q9"
-    t.integer  "q10"
+    t.string   "q8"
+    t.string   "q9"
+    t.string   "q10"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "escolaridade"
