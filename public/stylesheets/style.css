@@ -45,7 +45,7 @@ border-bottom:1px dotted #900;
 	width:900px;
 	text-align:left;
 	padding:0;
-	margin:0;
+	margin:10px 0 0 0;
 	background: url(/images/intro.jpg) no-repeat top left;
 }
 #intro,
